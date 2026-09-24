@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?  @default("Admin User")
+  passwordHash String
+  role         String   @default("superadmin")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model BlogPost {
+  id             String    @id @default(cuid())
+  title          String
+  slug           String    @unique
+  content        String
+  excerpt        String?
+  featuredImage  String?
+  seoTitle       String?
+  seoDescription String?
+  category       String?   @default("Product & Industry")
+  author         String?   @default("Remaarkly Team")
+  readTime       String?   @default("4 min read")
+  status         String    @default("draft") // draft, published
+  publishedAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model FormSubmission {
+  id              String   @id @default(cuid())
+  type            String   // "contact" | "demo"
+  name            String
+  email           String
+  phone           String?
+  company         String?
+  message         String?
+  productInterest String?  @default("PetRoute")
+  monthlyVolume   String?  // for demo requests
+  country         String?  // for demo requests
+  isRead          Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model SiteSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
