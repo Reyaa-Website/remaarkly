@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Remaarkly',
-  tagline: 'Engineered Software Systems for Mission-Critical Vertical Industries',
+  tagline: 'Engineered Software Systems for Mission-Critical Operations',
   description:
     'Remaarkly builds specialized, high-utility SaaS platforms. Our flagship solution, PetRoute, powers pet import, export, and international relocation logistics worldwide.',
   url: process.env.NEXT_PUBLIC_APP_URL || 'https://remaarkly.com',

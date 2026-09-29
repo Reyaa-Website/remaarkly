@@ -37,14 +37,14 @@ export default async function AdminBlogsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">
             <BookOpen className="w-3.5 h-3.5" />
             Content Publishing
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
             Blog Articles
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 mt-1">
             Create, edit, and publish technical insights and marketing announcements.
           </p>
         </div>
@@ -59,11 +59,11 @@ export default async function AdminBlogsPage() {
       </div>
 
       {/* Blog List Table */}
-      <div className="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+      <div className="rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/50 text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <tr className="border-b border-slate-200 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500">
                 <th className="py-3.5 px-4">Article</th>
                 <th className="py-3.5 px-4">Category</th>
                 <th className="py-3.5 px-4">Status</th>
@@ -72,14 +72,14 @@ export default async function AdminBlogsPage() {
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+            <tbody className="divide-y divide-slate-100 text-xs">
               {posts.length > 0 ? (
                 posts.map((post) => (
-                  <tr key={post.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors">
+                  <tr key={post.id} className="hover:bg-slate-50 transition-colors">
                     
                     {/* Article Title & Slug */}
                     <td className="py-4 px-4 max-w-sm">
-                      <div className="font-bold text-slate-900 dark:text-white line-clamp-1">
+                      <div className="font-bold text-slate-900 line-clamp-1">
                         {post.title}
                       </div>
                       <div className="text-[11px] text-slate-400 font-mono mt-0.5 truncate">
@@ -89,7 +89,7 @@ export default async function AdminBlogsPage() {
 
                     {/* Category */}
                     <td className="py-4 px-4 whitespace-nowrap">
-                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
                         {post.category || 'General'}
                       </span>
                     </td>
@@ -98,15 +98,15 @@ export default async function AdminBlogsPage() {
                     <td className="py-4 px-4 whitespace-nowrap">
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider ${
                         post.status === 'published'
-                          ? 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
+                          ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                          : 'bg-slate-100 text-slate-600 border border-slate-200'
                       }`}>
                         {post.status}
                       </span>
                     </td>
 
                     {/* Author */}
-                    <td className="py-4 px-4 whitespace-nowrap text-slate-600 dark:text-slate-400">
+                    <td className="py-4 px-4 whitespace-nowrap text-slate-600">
                       {post.author || 'Remaarkly'}
                     </td>
 
@@ -121,7 +121,7 @@ export default async function AdminBlogsPage() {
                         <Link
                           href={`/blog/${post.slug}`}
                           target="_blank"
-                          className="p-1.5 rounded-lg text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 inline-flex items-center"
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-slate-900 hover:bg-slate-100 inline-flex items-center"
                           title="View on public site"
                         >
                           <ExternalLink className="w-4 h-4" />
@@ -129,7 +129,7 @@ export default async function AdminBlogsPage() {
                       )}
                       <Link
                         href={`/admin/blogs/${post.id}`}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100"
                       >
                         <Edit3 className="w-3 h-3" />
                         <span>Edit</span>

@@ -11,7 +11,7 @@ export function MarkdownView({ content }: MarkdownViewProps) {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={i} className="font-bold text-slate-900 dark:text-white">{part.slice(2, -2)}</strong>;
+        return <strong key={i} className="font-bold text-slate-900">{part.slice(2, -2)}</strong>;
       }
       return part;
     });
@@ -24,7 +24,7 @@ export function MarkdownView({ content }: MarkdownViewProps) {
   const flushList = () => {
     if (currentList.length > 0) {
       elements.push(
-        <ul key={`list-${elements.length}`} className="my-5 space-y-2 list-disc list-inside text-slate-700 dark:text-slate-300">
+        <ul key={`list-${elements.length}`} className="my-5 space-y-2 list-disc list-inside text-slate-700">
           {currentList.map((item, idx) => (
             <li key={idx} className="leading-relaxed pl-1">
               {renderFormattedText(item)}
@@ -47,21 +47,21 @@ export function MarkdownView({ content }: MarkdownViewProps) {
     if (line.startsWith('### ')) {
       flushList();
       elements.push(
-        <h3 key={i} className="text-2xl font-bold text-slate-900 dark:text-white mt-8 mb-4 tracking-tight">
+        <h3 key={i} className="text-2xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">
           {line.replace('### ', '')}
         </h3>
       );
     } else if (line.startsWith('## ')) {
       flushList();
       elements.push(
-        <h2 key={i} className="text-3xl font-extrabold text-slate-900 dark:text-white mt-10 mb-4 tracking-tight">
+        <h2 key={i} className="text-3xl font-extrabold text-slate-900 mt-10 mb-4 tracking-tight">
           {line.replace('## ', '')}
         </h2>
       );
     } else if (line.startsWith('# ')) {
       flushList();
       elements.push(
-        <h1 key={i} className="text-4xl font-extrabold text-slate-900 dark:text-white mt-10 mb-6 tracking-tight">
+        <h1 key={i} className="text-4xl font-extrabold text-slate-900 mt-10 mb-6 tracking-tight">
           {line.replace('# ', '')}
         </h1>
       );
@@ -72,7 +72,7 @@ export function MarkdownView({ content }: MarkdownViewProps) {
     } else {
       flushList();
       elements.push(
-        <p key={i} className="my-4 text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
+        <p key={i} className="my-4 text-slate-700 leading-relaxed text-base sm:text-lg">
           {renderFormattedText(line)}
         </p>
       );

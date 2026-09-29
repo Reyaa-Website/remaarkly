@@ -9,7 +9,7 @@ A modern, high-conversion marketing website and administrative command center fo
 ### 🌐 Public Marketing Website
 - **Modern SaaS Aesthetics**: Designed with a sleek aesthetic inspired by Linear, Stripe, and Vercel (dark/light theme, glassmorphism, glowing gradients, subtle grid patterns, micro-interactions).
 - **Home Page**:
-  - Parent brand showcase presenting Remaarkly’s vertical SaaS engineering philosophy.
+  - Parent brand showcase presenting Remaarkly’s purpose-built software engineering philosophy.
   - Interactive **PetRoute Flagship Showcase** with a 5-module tab explorer:
     1. **Enquiry & Quoting**: Instant dynamic rate estimation & IATA CR-82 crate calculation.
     2. **Booking & Compliance**: DEFRA, USDA, NParks, and DAFF automated rulebooks & titer test trackers.
@@ -47,7 +47,7 @@ A modern, high-conversion marketing website and administrative command center fo
 - **Styling**: Tailwind CSS v4 & Lucide Icons
 - **Database & ORM**: Prisma ORM with SQLite for zero-config local development, with full PostgreSQL support (Supabase / Neon / Vercel Postgres).
 - **Authentication**: JWT session tokens via `jose` with `bcryptjs` password hashing.
-- **Theme**: `next-themes` (Dark/Light mode support).
+- **Theme**: Clean, high-contrast light theme with custom glassmorphism and radiant accents.
 
 ---
 

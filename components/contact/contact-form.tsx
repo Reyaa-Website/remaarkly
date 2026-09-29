@@ -104,18 +104,18 @@ function ContactFormInner() {
   if (status === 'success') {
     return (
       <div className="p-8 sm:p-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 text-center space-y-4">
-        <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Message Received!</h3>
-        <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+        <h3 className="text-2xl font-bold text-slate-900">Message Received!</h3>
+        <p className="text-sm text-slate-600 max-w-md mx-auto">
           Thank you for reaching out to Remaarkly. Our solution specialist will review your requirements and respond within 24 business hours.
         </p>
         <div className="pt-4">
           <button
             type="button"
             onClick={() => setStatus('idle')}
-            className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+            className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-800 hover:bg-slate-50"
           >
             Send Another Message
           </button>
@@ -127,7 +127,7 @@ function ContactFormInner() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {status === 'error' && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-center gap-3 text-sm">
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 flex items-center gap-3 text-sm">
           <AlertCircle className="w-5 h-5 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -136,7 +136,7 @@ function ContactFormInner() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Full Name */}
         <div>
-          <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Full Name <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -149,14 +149,14 @@ function ContactFormInner() {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Johnathan Vance"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Work Email <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -169,7 +169,7 @@ function ContactFormInner() {
               value={formData.email}
               onChange={handleChange}
               placeholder="name@company.com"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
@@ -178,7 +178,7 @@ function ContactFormInner() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Phone Number
           </label>
           <div className="relative">
@@ -190,14 +190,14 @@ function ContactFormInner() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+1 (555) 000-0000"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Company Name
           </label>
           <div className="relative">
@@ -209,7 +209,7 @@ function ContactFormInner() {
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Apex Global Relocations"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
@@ -217,7 +217,7 @@ function ContactFormInner() {
 
       {/* Product Interest Dropdown */}
       <div>
-        <label htmlFor="productInterest" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="productInterest" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
           Which product are you interested in? <span className="text-red-500">*</span>
         </label>
         <select
@@ -225,18 +225,18 @@ function ContactFormInner() {
           name="productInterest"
           value={formData.productInterest}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
         >
           <option value="General Inquiry">General Inquiry</option>
           <option value="PetRoute">PetRoute — Pet Import & Export Management OS</option>
-          <option value="Remaarkly Platform">Remaarkly Vertical SaaS Platform & Partnerships</option>
+          <option value="Remaarkly Platform">Remaarkly Software Platform & Partnerships</option>
           <option value="Custom Logistics Suite">Custom Specialized Logistics Solutions</option>
         </select>
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
           Your Message <span className="text-red-500">*</span>
         </label>
         <div className="relative">
@@ -248,7 +248,7 @@ function ContactFormInner() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Tell us about your organization, current workflows, and what challenges you are looking to solve..."
-            className="w-full p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+            className="w-full p-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
           />
         </div>
       </div>

@@ -26,14 +26,14 @@ export default async function AdminSettingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">
           <Settings className="w-3.5 h-3.5" />
           Configuration
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
           Site Settings
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-xs sm:text-sm text-slate-500 mt-1">
           Update global contact email, office details, social profile links, and live announcements.
         </p>
       </div>

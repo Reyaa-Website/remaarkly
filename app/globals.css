@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.never-applied-dark));
+
 @layer base {
   :root {
     --background: #ffffff;
@@ -17,24 +19,6 @@
     --accent-foreground: #ffffff;
     --ring: rgba(79, 70, 229, 0.4);
     --glow: rgba(79, 70, 229, 0.15);
-  }
-
-  .dark {
-    --background: #030712;
-    --foreground: #f8fafc;
-    --card: #0b0f19;
-    --card-foreground: #f8fafc;
-    --card-border: #1e293b;
-    --muted: #111827;
-    --muted-foreground: #94a3b8;
-    --border: #1f293d;
-    --input: #1e293b;
-    --primary: #6366f1;
-    --primary-foreground: #ffffff;
-    --accent: #38bdf8;
-    --accent-foreground: #030712;
-    --ring: rgba(99, 102, 241, 0.4);
-    --glow: rgba(99, 102, 241, 0.2);
   }
 }
 
@@ -54,34 +38,15 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-.dark .glass-panel {
-  background: rgba(11, 15, 25, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
 .glass-dropdown {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
-.dark .glass-dropdown {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* Radiant gradient text */
 .text-gradient {
   background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dark .text-gradient {
-  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -111,13 +76,6 @@ body {
     linear-gradient(to bottom, rgba(100, 116, 139, 0.07) 1px, transparent 1px);
 }
 
-.dark .bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-}
-
 /* Subtle glow orb */
 .hero-glow {
   position: absolute;
@@ -138,9 +96,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.3);
   border-radius: 4px;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.5);

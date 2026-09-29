@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { Logo } from '../logo';
 import { 
   LayoutDashboard, 
   Inbox, 
@@ -13,9 +14,9 @@ import {
   ShieldCheck, 
   Sparkles,
   ChevronRight,
-  Layers
+  Layers,
+  PawPrint
 } from 'lucide-react';
-import { ThemeToggle } from '../theme-toggle';
 
 interface AdminSidebarProps {
   user: {
@@ -69,26 +70,23 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
   ];
 
   return (
-    <aside className="w-64 bg-white dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between shrink-0 h-screen sticky top-0">
+    <aside className="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 h-screen sticky top-0">
       
       {/* Top Brand */}
       <div>
-        <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
-          <Link href="/admin" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
-              R
-            </div>
+        <div className="p-5 border-b border-slate-200 flex items-center justify-between">
+          <Link href="/admin" className="flex items-center gap-2.5 group">
+            <Logo size="sm" />
             <div>
-              <div className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+              <div className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
                 Remaarkly
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-semibold uppercase">
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-600 font-semibold uppercase">
                   Admin
                 </span>
               </div>
               <div className="text-[10px] text-slate-400">Control Center</div>
             </div>
           </Link>
-          <ThemeToggle />
         </div>
 
         {/* Nav list */}
@@ -106,7 +104,7 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
                 className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                   isActive
                     ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -115,7 +113,7 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
                 </div>
                 {item.badge && (
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400'
+                    isActive ? 'bg-white/20 text-white' : 'bg-indigo-100 text-indigo-600'
                   }`}>
                     {item.badge}
                   </span>
@@ -127,11 +125,11 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
       </div>
 
       {/* Bottom User info & Public link */}
-      <div className="p-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+      <div className="p-4 border-t border-slate-200 space-y-3">
         <Link
           href="/"
           target="_blank"
-          className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors border border-slate-200/60 dark:border-slate-800/60"
+          className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors border border-slate-200/60"
         >
           <span className="flex items-center gap-2">
             <ExternalLink className="w-3.5 h-3.5" />
@@ -140,9 +138,9 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
         </Link>
 
-        <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between">
+        <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
           <div className="truncate pr-2">
-            <div className="text-xs font-bold text-slate-900 dark:text-white truncate">
+            <div className="text-xs font-bold text-slate-900 truncate">
               {user.name || 'Admin'}
             </div>
             <div className="text-[11px] text-slate-400 truncate">{user.email}</div>
@@ -152,7 +150,7 @@ export function AdminSidebar({ user, unreadCount = 0 }: AdminSidebarProps) {
             onClick={handleLogout}
             disabled={loggingOut}
             title="Logout"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/40 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors"
           >
             <LogOut className="w-4 h-4" />
           </button>

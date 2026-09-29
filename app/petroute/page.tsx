@@ -17,7 +17,14 @@ import {
   DollarSign,
   Users2,
   Lock,
-  Workflow
+  Workflow,
+  PawPrint,
+  Dog,
+  Cat,
+  Luggage,
+  TicketsPlane,
+  Camera,
+  PlaneTakeoff,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -27,12 +34,48 @@ export const metadata: Metadata = {
 };
 
 export default function PetRoutePage() {
+  const transitGallery = [
+    {
+      title: 'Airport Cargo & Ramp Transit',
+      subtitle: 'IATA CR-82 compliant crates & kennel escorts',
+      image: '/images/pet-travel-airport.jpg',
+      icon: Dog,
+      badge: 'Canine Flight Route',
+      tag: 'BA249 • Heathrow to JFK',
+    },
+    {
+      title: 'In-Cabin & Feline Departure',
+      subtitle: 'Airline-approved breathable mesh carriers',
+      image: '/images/cat-travel-airport.jpg',
+      icon: Cat,
+      badge: 'Feline Special Handling',
+      tag: 'SQ321 • Changi to Zurich',
+    },
+    {
+      title: 'Veterinary & RNATT Titer Check',
+      subtitle: 'Microchip scanning & government health endorsement',
+      image: '/images/pet-vet-compliance.jpg',
+      icon: ShieldCheck,
+      badge: 'DEFRA & USDA Clearance',
+      tag: 'Rabies Titre: 0.85 IU/ml',
+    },
+    {
+      title: 'Arrival Lounge Reunion',
+      subtitle: 'Smooth customs clearance & live parent handover',
+      image: '/images/pet-family-arrival.jpg',
+      icon: HeartHandshake,
+      badge: 'Safe Arrival Verified',
+      tag: 'Doorstep Delivery Complete',
+    },
+  ];
+
   const modules = [
     {
       id: 'enquiry',
       title: 'Enquiry Management',
-      tagline: 'Capture and track new customer enquiries',
-      icon: FileText,
+      tagline: 'Capture leads, calculate tariffs & IATA CR-82 crate dimensions',
+      icon: TicketsPlane,
+      petIcon: Luggage,
       description:
         'Capture inbound leads directly from your website, calculate route tariffs and crate sizing in seconds, and automatically generate professional quote proposals with e-signatures.',
       bullets: [
@@ -41,13 +84,14 @@ export default function PetRoutePage() {
         'Automated lead follow-ups & conversion analytics',
         'Direct webform API & email intake sync',
       ],
-      badge: 'Module 1',
+      badge: 'Module 1 • Quotes & Tariffs',
     },
     {
       id: 'booking',
       title: 'Booking Management',
-      tagline: 'Manage import/export bookings end-to-end',
-      icon: CheckCircle2,
+      tagline: 'Manage import/export bookings & veterinary milestones',
+      icon: ShieldCheck,
+      petIcon: PawPrint,
       description:
         'Turn accepted quotes into structured relocation dockets. Access country-specific veterinary milestone checklists, import/export permit trackers, and regulatory rulebooks.',
       bullets: [
@@ -56,13 +100,14 @@ export default function PetRoutePage() {
         'Microchip & veterinary health certificate validation',
         'Stage-by-stage verification task delegation',
       ],
-      badge: 'Module 2',
+      badge: 'Module 2 • Vet Compliance',
     },
     {
       id: 'operations',
       title: 'Operations Dashboard',
-      tagline: 'Internal team view of all active bookings and tasks',
-      icon: Plane,
+      tagline: 'Team view of flight AWB, ground transit & live ramp safety',
+      icon: PlaneTakeoff,
+      petIcon: Dog,
       description:
         'Give your operations team total visibility over every live pet journey. Monitor flight schedules, cargo airway bills (AWB), airport ground transit, and temperature safety thresholds.',
       bullets: [
@@ -71,13 +116,14 @@ export default function PetRoutePage() {
         '1-Click customs clearance documentation packets',
         'Ground transport driver dispatching with GPS milestones',
       ],
-      badge: 'Module 3',
+      badge: 'Module 3 • Flight Logistics',
     },
     {
       id: 'customer-portal',
       title: 'Customer Portal',
-      tagline: 'Customers track their pet’s relocation status in real time',
-      icon: HeartHandshake,
+      tagline: 'Pet parents track comfort stops, photos & travel status live',
+      icon: PawPrint,
+      petIcon: Camera,
       description:
         'Give pet parents complete peace of mind with a branded, mobile-responsive portal. Share comfort-break photos, flight milestones, and verified travel documents.',
       bullets: [
@@ -86,13 +132,14 @@ export default function PetRoutePage() {
         'Digital document vault for health certs and permits',
         'Direct in-app messaging with relocation coordinators',
       ],
-      badge: 'Module 4',
+      badge: 'Module 4 • Pet Parent Live',
     },
     {
       id: 'agent-portal',
       title: 'Agent Portal',
-      tagline: 'Referral agents submit enquiries and track their bookings',
+      tagline: 'Global referral partners submit enquiries and track shipments',
       icon: Globe,
+      petIcon: Cat,
       description:
         'Collaborate with overseas handling partners, local clearing brokers, and referral agents. Share customs documents, track consignment milestones, and settle disbursements.',
       bullets: [
@@ -101,7 +148,7 @@ export default function PetRoutePage() {
         'B2B cost sharing & multi-currency disbursement tracking',
         'Global agency directory with partner ratings',
       ],
-      badge: 'Module 5',
+      badge: 'Module 5 • Partner Network',
     },
   ];
 
@@ -130,24 +177,24 @@ export default function PetRoutePage() {
     <div className="pt-32 pb-24 relative overflow-hidden bg-grid-pattern min-h-screen">
       
       {/* Radiant Glowing Orbs */}
-      <div className="hero-glow top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-indigo-500/20 via-sky-500/20 to-teal-500/20 dark:from-indigo-600/30 dark:via-sky-500/25 dark:to-teal-500/20" />
+      <div className="hero-glow top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-indigo-500/20 via-sky-500/20 to-teal-500/20" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* 1. Hero Section */}
-        <div className="text-center max-w-4xl mx-auto space-y-6 mb-20">
+        <div className="text-center max-w-4xl mx-auto space-y-6 mb-16">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-200 dark:border-indigo-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-xs font-semibold text-indigo-700 dark:text-indigo-300 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-            <span>Product Overview • Powered by Remaarkly</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-200 bg-white/90 backdrop-blur-md text-xs font-semibold text-indigo-700 shadow-sm">
+            <PawPrint className="w-3.5 h-3.5 text-indigo-600 animate-pulse" />
+            <span>Dedicated Pet Logistics OS • Powered by Remaarkly</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
             PetRoute — Pet Import & Export Management,{' '}
             <span className="text-gradient">simplified</span>.
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             The dedicated SaaS operating system for pet relocation agencies and live animal transport coordinators. Eliminate spreadsheet chaos and manage enquiries, bookings, flight operations, customer portals, and partner agents in one unified platform.
           </p>
 
@@ -157,6 +204,7 @@ export default function PetRoutePage() {
               href="/request-demo?product=PetRoute"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-sky-500 hover:from-indigo-500 hover:to-sky-400 shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all text-base"
             >
+              <PawPrint className="w-4 h-4" />
               <span>Request a Demo</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -165,37 +213,108 @@ export default function PetRoutePage() {
               href="https://app.remaarkly.com/login"
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-slate-800 bg-white border border-slate-200 hover:bg-slate-50 transition-all text-base"
             >
-              <LogIn className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <LogIn className="w-4 h-4 text-indigo-600" />
               <span>PetRoute Login</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
             </a>
           </div>
 
           {/* Trust badges */}
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-500" />
               <span>IATA Live Animals Regulations (LAR) Compliant</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-indigo-500" />
-              <span>Zero-Downtime SaaS Architecture</span>
+              <Dog className="w-4 h-4 text-indigo-500" />
+              <span>DEFRA, USDA & NParks Milestone Validation</span>
             </div>
+            <div className="flex items-center gap-1.5">
+              <Clock className="w-4 h-4 text-indigo-500" />
+              <span>Zero-Downtime Global SaaS Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 1.5 Pet Travel Live Photo Showcase Gallery */}
+        <div className="mb-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-bold text-indigo-700 mb-2">
+                <Camera className="w-3.5 h-3.5 text-indigo-600" />
+                <span>Live Animal Freight Operations in Action</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Designed specifically for safe, compassionate pet journeys
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-md">
+              From airline ramp transit and veterinary RNATT compliance to real-time comfort updates for pet parents, PetRoute covers every mile.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {transitGallery.map((item, idx) => {
+              const ItemIcon = item.icon;
+              return (
+                <div 
+                  key={idx}
+                  className="group relative rounded-2xl overflow-hidden border border-slate-200/90 bg-white shadow-md hover:shadow-xl hover:border-indigo-400 transition-all flex flex-col"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
+                    
+                    <div className="absolute top-3 left-3">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold border border-white/20">
+                        <ItemIcon className="w-3 h-3 text-indigo-300" />
+                        <span>{item.badge}</span>
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-sky-300">
+                        {item.tag}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-1 line-clamp-2">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                    <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-indigo-600">
+                      <span>Automated in PetRoute</span>
+                      <PawPrint className="w-3.5 h-3.5 text-indigo-400" />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* 2. Five Core Modules Section */}
         <div className="space-y-12 mb-28">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+            <div className="text-xs font-bold uppercase tracking-wider text-indigo-600">
               Complete Feature Architecture
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
               Five purpose-built modules in one workspace
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               Every step of the pet relocation lifecycle — from the first web enquiry to final doorstep delivery.
             </p>
           </div>
@@ -203,41 +322,49 @@ export default function PetRoutePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {modules.map((mod, idx) => {
               const Icon = mod.icon;
+              const PetIcon = mod.petIcon;
               const isHeroCard = idx === 0 || idx === 1;
 
               return (
                 <div
                   key={mod.id}
-                  className={`rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-950 p-8 shadow-lg hover:border-indigo-500/40 transition-all flex flex-col justify-between ${
+                  className={`rounded-3xl border border-slate-200/80 bg-white p-8 shadow-lg hover:border-indigo-500/40 transition-all flex flex-col justify-between ${
                     idx < 2 ? 'lg:col-span-6' : 'lg:col-span-4'
                   }`}
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800/60 flex items-center justify-center">
-                        <Icon className="w-6 h-6" />
+                      <div className="flex items-center gap-2">
+                        <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center">
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        {PetIcon && (
+                          <div className="w-8 h-8 rounded-xl bg-indigo-50/60 text-indigo-500 border border-indigo-100/60 flex items-center justify-center">
+                            <PetIcon className="w-4 h-4" />
+                          </div>
+                        )}
                       </div>
-                      <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
+                      <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
                         {mod.badge}
                       </span>
                     </div>
 
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                         {mod.title}
                       </h3>
-                      <div className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-0.5">
+                      <div className="text-xs font-semibold text-indigo-600 mt-0.5">
                         {mod.tagline}
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {mod.description}
                     </p>
 
-                    <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+                    <div className="space-y-2 pt-2 border-t border-slate-100">
                       {mod.bullets.map((b, bIdx) => (
-                        <div key={bIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                        <div key={bIdx} className="flex items-start gap-2 text-xs text-slate-700">
                           <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                           <span>{b}</span>
                         </div>
@@ -248,7 +375,7 @@ export default function PetRoutePage() {
                   <div className="pt-6">
                     <Link
                       href={`/request-demo?product=PetRoute&module=${mod.id}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-500"
                     >
                       <span>Explore {mod.title} in demo</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -261,15 +388,15 @@ export default function PetRoutePage() {
         </div>
 
         {/* 3. Who It's For Section */}
-        <div className="mb-28 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/40 p-8 sm:p-14">
+        <div className="mb-28 rounded-3xl border border-slate-200/80 bg-slate-50/50 p-8 sm:p-14">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-            <div className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+            <div className="text-xs font-bold uppercase tracking-wider text-indigo-600">
               Industry Fit
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Who PetRoute is built for
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               Engineered specifically for teams navigating live animal transport regulations and freight forwarding.
             </p>
           </div>
@@ -280,15 +407,15 @@ export default function PetRoutePage() {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800/80 space-y-4 shadow-sm"
+                  className="p-8 rounded-2xl bg-white border border-slate-200/80 space-y-4 shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-bold text-slate-900">
                     {aud.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {aud.description}
                   </p>
                 </div>
@@ -355,12 +482,12 @@ export default function PetRoutePage() {
         </div>
 
         {/* 5. Bottom Conversion Banner */}
-        <div className="rounded-3xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="rounded-3xl bg-slate-100 border border-slate-200 p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-2xl font-bold text-slate-900">
               Ready to streamline your pet relocation operations?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               Join leading relocation agencies and freight forwarders using PetRoute.
             </p>
           </div>
@@ -376,7 +503,7 @@ export default function PetRoutePage() {
               href="https://app.remaarkly.com/login"
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-3 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm flex items-center gap-1.5"
+              className="px-5 py-3 rounded-xl font-semibold text-slate-800 bg-white border border-slate-200 text-xs sm:text-sm flex items-center gap-1.5"
             >
               <span>Login</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />

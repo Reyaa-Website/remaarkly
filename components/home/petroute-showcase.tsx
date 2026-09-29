@@ -17,7 +17,12 @@ import {
   Lock,
   ChevronRight,
   ExternalLink,
-  Laptop
+  Laptop,
+  PawPrint,
+  Dog,
+  Cat,
+  Luggage,
+  Camera
 } from 'lucide-react';
 import { siteConfig } from '@/lib/site-config';
 
@@ -30,6 +35,8 @@ export function PetRouteShowcase() {
       title: 'Enquiry & Quoting',
       badge: 'Dynamic Rates',
       icon: FileText,
+      image: '/images/cat-travel-airport.jpg',
+      petTag: 'In-Cabin & Cargo Approved',
       tagline: 'Generate accurate, route-optimized pet relocation quotes in seconds',
       description: 'Stop spending 45 minutes manually calculating crate sizes, airline freight tariffs, and vet fees. PetRoute calculates IATA Container Requirement 1 crate specs and produces interactive quotes that clients can accept online with e-signatures.',
       features: [
@@ -40,8 +47,8 @@ export function PetRouteShowcase() {
       ],
       preview: {
         title: 'Instant Quote Generator #QT-7721',
-        subtitle: 'Route: New York (JFK) → Frankfurt (FRA) • Pet: 1x French Bulldog (7.8 kg)',
-        highlight: 'Calculated Crate: IATA CR-82 Snub-Nosed Mod • Margin: 34%',
+        subtitle: 'Route: New York (JFK) → Frankfurt (FRA) • Pet: 1x British Shorthair (4.2 kg)',
+        highlight: 'Calculated Crate: IATA Series 200 In-Cabin • Margin: 34%',
         items: [
           { label: 'Lufthansa Cargo Live Animal Freight', val: '$1,240.00' },
           { label: 'USDA APHIS Endorsement Fee', val: '$180.00' },
@@ -56,6 +63,8 @@ export function PetRouteShowcase() {
       title: 'Booking & Compliance',
       badge: 'Zero-Error Protocols',
       icon: CheckCircle2,
+      image: '/images/pet-vet-compliance.jpg',
+      petTag: 'Veterinary Clearance Active',
       tagline: 'Never miss a rabies titer window or government permit deadline',
       description: 'Dynamic veterinary checklists adapted to the destination country requirements (USDA, DEFRA, Singapore NParks, Australia DAFF, Japan MAFF). Automated timers alert coordinators of titer test waiting windows.',
       features: [
@@ -82,6 +91,8 @@ export function PetRouteShowcase() {
       title: 'Operations & Cargo',
       badge: 'Live Flight Dispatch',
       icon: Plane,
+      image: '/images/pet-travel-airport.jpg',
+      petTag: 'Airport Animal Reception Center',
       tagline: 'Coordinate air cargo, ground transit, and temperature safety',
       description: 'PetRoute integrates directly with airline flight schedules and temperature embargo data. Track cargo booking references (AWB), dispatch ground drivers for airport runs, and compile customs clearance packets in one click.',
       features: [
@@ -108,6 +119,8 @@ export function PetRouteShowcase() {
       title: 'Customer Portal',
       badge: 'Pet Parent Peace of Mind',
       icon: HeartHandshake,
+      image: '/images/pet-family-arrival.jpg',
+      petTag: 'Airport Lounge Reunion Verified',
       tagline: 'Give anxious pet parents 24/7 transparent live updates',
       description: 'Reduce inbound phone calls by 70%. Pet parents get a modern, mobile-friendly portal where handlers post comfort-break photos, flight tracking updates, and verified health paperwork.',
       features: [
@@ -117,12 +130,12 @@ export function PetRouteShowcase() {
         'Built-in direct messaging with dedicated relocation coordinator',
       ],
       preview: {
-        title: 'Pet Parent Portal: Milo & Bella’s Journey',
-        subtitle: 'Clients: David & Sarah Miller • Coordinator: Emma Watson',
-        highlight: 'Latest Update: "Milo enjoyed his hydration break at the VIP lounge!"',
+        title: 'Pet Parent Portal: Pip & Milo’s Journey',
+        subtitle: 'Clients: Sarah & Tom Jenkins • Coordinator: Emma Watson',
+        highlight: 'Latest Update: "Pip arrived happily at the VIP lounge!"',
         items: [
-          { label: 'Photo Uploaded from Frankfurt ARC', val: '📸 View 3 Photos' },
-          { label: 'Flight Status (LH 400 to JFK)', val: 'On Time (ETA 16:45)' },
+          { label: 'Photo Uploaded from Arrival Lounge', val: '📸 View 4 Photos' },
+          { label: 'Flight Status (BA 182 to LHR)', val: 'Landed (Gate Opened)' },
           { label: 'Digital Import Permit PDF', val: 'Available in Vault' },
           { label: 'Direct Coordinator Support Chat', val: 'Online (Avg reply 4m)' },
         ],
@@ -134,6 +147,8 @@ export function PetRouteShowcase() {
       title: 'Agent & Partner Portal',
       badge: 'Global Partner Network',
       icon: Globe,
+      image: '/images/pet-travel-airport.jpg',
+      petTag: 'Global Customs Broker Network',
       tagline: 'Collaborate seamlessly with overseas handling partners',
       description: 'Grant restricted, secure access to your network of origin and destination customs brokers, quarantine liaisons, and airline cargo handlers worldwide.',
       features: [
@@ -160,26 +175,26 @@ export function PetRouteShowcase() {
   const currentModule = modules.find((m) => m.id === activeTab) || modules[0];
 
   return (
-    <section id="petroute" className="py-24 relative overflow-hidden bg-slate-50/50 dark:bg-slate-900/30">
+    <section id="petroute" className="py-24 relative overflow-hidden bg-slate-50/50">
       
       {/* Background Accent */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-500/15 blur-3xl rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/15 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/10 blur-3xl rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-700 text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             Flagship SaaS Product
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             Meet <span className="text-gradient">PetRoute</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             The comprehensive Operating System engineered specifically for Pet Import, Export, and Relocation Management companies worldwide.
           </p>
         </div>
@@ -196,11 +211,11 @@ export function PetRouteShowcase() {
                 type="button"
                 className={`flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 border ${
                   isActive
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/25 dark:bg-indigo-600'
-                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/25'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-100'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-600 dark:text-indigo-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-indigo-600'}`} />
                 <span>{m.title}</span>
               </button>
             );
@@ -208,19 +223,19 @@ export function PetRouteShowcase() {
         </div>
 
         {/* Active Module Showcase Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border border-slate-200/90 dark:border-slate-800/90 bg-white/95 dark:bg-slate-950/90 p-6 sm:p-10 shadow-xl backdrop-blur-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border border-slate-200/90 bg-white/95 p-6 sm:p-10 shadow-xl backdrop-blur-xl">
           
           {/* Left Details */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-300 text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 border border-indigo-200 text-indigo-600 text-xs font-semibold">
               {currentModule.badge}
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
               {currentModule.tagline}
             </h3>
 
-            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               {currentModule.description}
             </p>
 
@@ -228,10 +243,10 @@ export function PetRouteShowcase() {
             <div className="space-y-3 pt-2">
               {currentModule.features.map((feat, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{feat}</span>
+                  <span className="text-sm font-medium text-slate-700">{feat}</span>
                 </div>
               ))}
             </div>
@@ -248,31 +263,59 @@ export function PetRouteShowcase() {
           </div>
 
           {/* Right Live Interactive UI Mockup */}
-          <div className="lg:col-span-6">
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 shadow-lg overflow-hidden">
+          <div className="lg:col-span-6 space-y-4">
+            
+            {/* Live Pet Travel Photography Card */}
+            <div className="relative h-48 sm:h-52 rounded-2xl overflow-hidden border border-slate-200/90 shadow-md group">
+              <img
+                src={currentModule.image}
+                alt={currentModule.preview.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent" />
+              
+              <div className="absolute top-3 left-3 flex items-center gap-2">
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-white/95 text-slate-900 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                  <PawPrint className="w-3.5 h-3.5 text-indigo-600" />
+                  <span>{currentModule.petTag}</span>
+                </span>
+              </div>
+
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
+                <div className="font-semibold flex items-center gap-1.5 truncate max-w-[260px] sm:max-w-sm">
+                  <Plane className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                  <span className="truncate">{currentModule.preview.subtitle}</span>
+                </div>
+                <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-bold shrink-0">
+                  IATA Verified
+                </span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 shadow-md overflow-hidden">
               
               {/* Header */}
-              <div className="px-4 py-3 bg-slate-200/70 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+              <div className="px-4 py-3 bg-slate-200/70 border-b border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-slate-400/80" />
                   <div className="w-2.5 h-2.5 rounded-full bg-slate-400/80" />
                   <div className="w-2.5 h-2.5 rounded-full bg-slate-400/80" />
-                  <span className="ml-1 text-xs font-semibold text-slate-700 dark:text-slate-300 truncate max-w-[200px] sm:max-w-xs">
+                  <span className="ml-1 text-xs font-semibold text-slate-700 truncate max-w-[200px] sm:max-w-xs">
                     {currentModule.preview.title}
                   </span>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-600 border border-indigo-500/20">
                   Live Engine
                 </span>
               </div>
 
               {/* Body */}
               <div className="p-5 space-y-4">
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                <div className="text-xs text-slate-500 font-medium">
                   {currentModule.preview.subtitle}
                 </div>
 
-                <div className="p-3 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/15 border border-indigo-500/20 text-xs font-semibold text-indigo-700 dark:text-indigo-300">
+                <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-700">
                   ⚡ {currentModule.preview.highlight}
                 </div>
 
@@ -281,18 +324,18 @@ export function PetRouteShowcase() {
                   {currentModule.preview.items.map((item, idx) => (
                     <div
                       key={idx}
-                      className="p-3 rounded-lg bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between text-xs"
+                      className="p-3 rounded-lg bg-white border border-slate-200/80 flex items-center justify-between text-xs"
                     >
-                      <span className="text-slate-600 dark:text-slate-300 font-medium">{item.label}</span>
-                      <span className="font-semibold text-slate-900 dark:text-white">{item.val}</span>
+                      <span className="text-slate-600 font-medium">{item.label}</span>
+                      <span className="font-semibold text-slate-900">{item.val}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Footer summary */}
-                <div className="pt-2 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 text-xs">
-                  <span className="text-slate-500 dark:text-slate-400 font-medium">Summary Status</span>
-                  <span className="font-bold text-emerald-600 dark:text-emerald-400">{currentModule.preview.total}</span>
+                <div className="pt-2 flex items-center justify-between border-t border-slate-200 text-xs">
+                  <span className="text-slate-500 font-medium">Summary Status</span>
+                  <span className="font-bold text-emerald-600">{currentModule.preview.total}</span>
                 </div>
               </div>
             </div>

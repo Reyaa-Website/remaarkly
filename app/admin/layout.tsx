@@ -15,7 +15,7 @@ export default async function AdminLayout({
   // If not logged in, we let the children render (which will be /admin/login)
   // or if inside a protected sub-page, we handle it
   if (!admin) {
-    return <div className="min-h-screen bg-slate-50 dark:bg-slate-950">{children}</div>;
+    return <div className="min-h-screen bg-slate-50">{children}</div>;
   }
 
   // Count unread submissions for sidebar badge
@@ -24,7 +24,7 @@ export default async function AdminLayout({
   });
 
   return (
-    <div className="min-h-screen bg-slate-50/70 dark:bg-slate-950 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-slate-50/70 flex flex-col md:flex-row">
       <AdminSidebar user={admin} unreadCount={unreadCount} />
       <main className="flex-1 min-w-0 p-6 sm:p-10 overflow-y-auto">
         <div className="max-w-6xl mx-auto">{children}</div>

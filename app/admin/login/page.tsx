@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Logo } from '@/components/logo';
 import { 
   Lock, 
   Mail, 
@@ -12,7 +13,6 @@ import {
   Sparkles, 
   ArrowLeft 
 } from 'lucide-react';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -55,12 +55,11 @@ export default function AdminLoginPage() {
       <div className="absolute top-6 left-6 right-6 flex items-center justify-between max-w-5xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Remaarkly</span>
         </Link>
-        <ThemeToggle />
       </div>
 
       {/* Main Login Card */}
@@ -68,21 +67,19 @@ export default function AdminLoginPage() {
         
         {/* Brand Header */}
         <div className="text-center mb-8 space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-xl mx-auto flex items-center justify-center shadow-lg shadow-indigo-500/25">
-            R
-          </div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
+          <Logo size="lg" className="mx-auto" />
+          <h1 className="text-2xl font-bold text-slate-900 pt-2">
             Remaarkly Control Center
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
+          <p className="text-xs text-slate-500">
             Sign in to manage blog posts, form submissions, and site settings.
           </p>
         </div>
 
-        <div className="p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/95 shadow-xl backdrop-blur-xl">
+        <div className="p-8 rounded-3xl border border-slate-200/80 bg-white/95 shadow-xl backdrop-blur-xl">
           
           {error && (
-            <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-center gap-3 text-xs">
+            <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 flex items-center gap-3 text-xs">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
@@ -91,7 +88,7 @@ export default function AdminLoginPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
                 Admin Email
               </label>
               <div className="relative">
@@ -102,14 +99,14 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@remaarkly.com"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
             </div>
 
             {/* Password */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
                 Password
               </label>
               <div className="relative">
@@ -120,7 +117,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
             </div>
@@ -143,16 +140,16 @@ export default function AdminLoginPage() {
           </form>
 
           {/* Seed demo credentials helper */}
-          <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 space-y-1 bg-slate-50 dark:bg-slate-950/60 -mx-4 -mb-4 p-4 rounded-b-2xl">
-            <div className="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+          <div className="mt-6 pt-5 border-t border-slate-100 text-[11px] text-slate-500 space-y-1 bg-slate-50 -mx-4 -mb-4 p-4 rounded-b-2xl">
+            <div className="font-semibold text-slate-700 flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-indigo-500" />
               Default Seed Credentials:
             </div>
-            <div className="font-mono text-slate-600 dark:text-slate-400">
-              Email: <span className="text-indigo-600 dark:text-indigo-400">admin@remaarkly.com</span>
+            <div className="font-mono text-slate-600">
+              Email: <span className="text-indigo-600">admin@remaarkly.com</span>
             </div>
-            <div className="font-mono text-slate-600 dark:text-slate-400">
-              Password: <span className="text-indigo-600 dark:text-indigo-400">admin123456</span>
+            <div className="font-mono text-slate-600">
+              Password: <span className="text-indigo-600">admin123456</span>
             </div>
           </div>
 

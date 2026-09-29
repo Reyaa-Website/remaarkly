@@ -72,29 +72,29 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl">
       
       {error && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-center gap-3 text-xs">
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 flex items-center gap-3 text-xs">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center gap-3 text-xs">
+        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 flex items-center gap-3 text-xs">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{success}</span>
         </div>
       )}
 
       {/* Contact & Support Section */}
-      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 shadow-sm space-y-5">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-          <Building className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+      <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-5">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+          <Building className="w-4 h-4 text-indigo-600" />
           Contact & Corporate Info
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Primary Contact Email
             </label>
             <div className="relative">
@@ -104,13 +104,13 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="contact_email"
                 value={settings.contact_email}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Customer Support Email
             </label>
             <div className="relative">
@@ -120,13 +120,13 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="support_email"
                 value={settings.support_email}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Telephone Number
             </label>
             <div className="relative">
@@ -136,13 +136,13 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="contact_phone"
                 value={settings.contact_phone}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Office Locations
             </label>
             <div className="relative">
@@ -152,7 +152,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="office_location"
                 value={settings.office_location}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
@@ -160,15 +160,15 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
       </div>
 
       {/* Social Links */}
-      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 shadow-sm space-y-5">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-          <Share2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+      <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-5">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+          <Share2 className="w-4 h-4 text-indigo-600" />
           Social & Brand Profiles
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               X / Twitter URL
             </label>
             <div className="relative">
@@ -180,13 +180,13 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="twitter_url"
                 value={settings.twitter_url}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               LinkedIn Company URL
             </label>
             <div className="relative">
@@ -198,13 +198,13 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="linkedin_url"
                 value={settings.linkedin_url}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               GitHub URL
             </label>
             <div className="relative">
@@ -216,7 +216,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
                 name="github_url"
                 value={settings.github_url}
                 onChange={handleChange}
-                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 bg-white text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
@@ -224,14 +224,14 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
       </div>
 
       {/* Global Announcement Message */}
-      <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-          <Megaphone className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+      <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-4">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+          <Megaphone className="w-4 h-4 text-indigo-600" />
           Global Product Announcement
         </h3>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">
             Announcement Text
           </label>
           <textarea
@@ -239,7 +239,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
             name="banner_announcement"
             value={settings.banner_announcement}
             onChange={handleChange}
-            className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full p-3 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
       </div>

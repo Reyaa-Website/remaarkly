@@ -128,23 +128,23 @@ function DemoRequestFormInner() {
   if (status === 'success') {
     return (
       <div className="p-8 sm:p-12 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 text-center space-y-5">
-        <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
           Demo Request Confirmed!
         </h3>
-        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-lg mx-auto leading-relaxed">
-          Thank you for your interest in <strong className="text-indigo-600 dark:text-indigo-400">{formData.productInterest || 'PetRoute'}</strong>. Our product specialist has received your requirements and will reach out within 2 hours to coordinate your live platform walkthrough.
+        <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">
+          Thank you for your interest in <strong className="text-indigo-600">{formData.productInterest || 'PetRoute'}</strong>. Our product specialist has received your requirements and will reach out within 2 hours to coordinate your live platform walkthrough.
         </p>
-        <div className="p-4 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+        <div className="p-4 rounded-xl bg-white/80 border border-slate-200 text-xs text-slate-500 max-w-md mx-auto">
           📅 A personalized invitation and demo calendar link have been dispatched to your email.
         </div>
         <div className="pt-2">
           <button
             type="button"
             onClick={() => setStatus('idle')}
-            className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+            className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-800 hover:bg-slate-50"
           >
             Submit Another Request
           </button>
@@ -156,7 +156,7 @@ function DemoRequestFormInner() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       {status === 'error' && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 flex items-center gap-3 text-sm">
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 flex items-center gap-3 text-sm">
           <AlertCircle className="w-5 h-5 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -165,7 +165,7 @@ function DemoRequestFormInner() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Full Name */}
         <div>
-          <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Your Name <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -178,14 +178,14 @@ function DemoRequestFormInner() {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Eleanor Rigby"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
 
         {/* Company Name */}
         <div>
-          <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="company" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Company / Agency Name <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -198,7 +198,7 @@ function DemoRequestFormInner() {
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Trans-Atlantic Pet Travel"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
@@ -207,7 +207,7 @@ function DemoRequestFormInner() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Work Email */}
         <div>
-          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Work Email <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -220,14 +220,14 @@ function DemoRequestFormInner() {
               value={formData.email}
               onChange={handleChange}
               placeholder="eleanor@petlogistics.com"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Phone / WhatsApp <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -240,7 +240,7 @@ function DemoRequestFormInner() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+1 (555) 234-5678"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
@@ -249,7 +249,7 @@ function DemoRequestFormInner() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* Country */}
         <div>
-          <label htmlFor="country" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="country" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Primary Operating Country <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -262,14 +262,14 @@ function DemoRequestFormInner() {
               value={formData.country}
               onChange={handleChange}
               placeholder="e.g. United States, UK, Australia, UAE"
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
             />
           </div>
         </div>
 
         {/* Product Selection */}
         <div>
-          <label htmlFor="productInterest" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+          <label htmlFor="productInterest" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
             Product Interested In <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -278,7 +278,7 @@ function DemoRequestFormInner() {
               name="productInterest"
               value={formData.productInterest}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
             >
               <option value="PetRoute">PetRoute — Pet Relocation & Logistics OS</option>
               <option value="General Inquiry">General Inquiry</option>
@@ -291,7 +291,7 @@ function DemoRequestFormInner() {
 
       {/* Monthly Booking Volume */}
       <div>
-        <label htmlFor="monthlyVolume" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="monthlyVolume" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
           Estimated Monthly Booking Volume <span className="text-red-500">*</span>
         </label>
         <div className="relative">
@@ -301,7 +301,7 @@ function DemoRequestFormInner() {
             name="monthlyVolume"
             value={formData.monthlyVolume}
             onChange={handleChange}
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"
           >
             <option value="1-20 bookings/month">1 - 20 pet shipments / month</option>
             <option value="21-50 bookings/month">21 - 50 pet shipments / month</option>
@@ -314,7 +314,7 @@ function DemoRequestFormInner() {
 
       {/* Special Requirements / Message */}
       <div>
-        <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">
           Specific modules you are most interested in exploring
         </label>
         <textarea
@@ -324,7 +324,7 @@ function DemoRequestFormInner() {
           value={formData.message}
           onChange={handleChange}
           placeholder="e.g. Crate sizing calculation, DEFRA export automated milestones, agent portal for our overseas customs handlers..."
-          className="w-full p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+          className="w-full p-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
         />
       </div>
 
